@@ -1,364 +1,838 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bautismo y Primer Añito de Joaquín</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primer Cumpleaños y Bautismo de Joaquín</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inria+Serif:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Estilos personalizados -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Parisienne&family=Inria+Serif:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: 'Inria Serif', serif;
-            background-color: #fffcf7;
-            color: #333;
+      :root {
+        --color-primary: #ff6b6b;
+        --color-secondary: #4d82af;
+        --color-accent: #ffd166;
+      }
+
+      body {
+        font-family: "Inria Serif", serif;
+        background-color: #fffcf7;
+        color: #333;
+        line-height: 1.8;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Baloo 2", cursive;
+        color: var(--color-primary);
+      }
+
+      .title-cumple {
+        font-family: "Parisienne", cursive;
+        font-size: 3.5rem;
+        color: var(--color-primary);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .baby-name {
+        color: var(--color-secondary);
+        font-weight: bold;
+      }
+
+      .header-section {
+        background: linear-gradient(135deg, #fffcf7 0%, #fff0f0 100%);
+        padding: 4rem 0 3rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .baby-photo {
+        width: 280px;
+        height: 280px;
+        margin: 0 auto 30px;
+        border-radius: 50%;
+        border: 10px solid white;
+        padding: 5px;
+        background: linear-gradient(
+          45deg,
+          var(--color-primary),
+          var(--color-accent)
+        );
+        box-shadow: 0 10px 30px rgba(255, 107, 107, 0.2);
+        position: relative;
+        overflow: hidden;
+        animation: pulse 2s infinite alternate;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
         }
-        
-        h1, h2, h3 {
-            font-family: 'Parisienne', cursive;
-            color: #4d82af;
+        100% {
+          transform: scale(1.05);
         }
-        
-        .baby-name {
-            color: #4d82af;
-            font-weight: bold;
+      }
+
+      .baby-photo:before {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        right: -15px;
+        bottom: -15px;
+        border: 3px dashed var(--color-primary);
+        border-radius: 50%;
+        animation: rotate 20s linear infinite;
+        opacity: 0.7;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
         }
-        
-        .header-section {
-            background-color: #fffcf7;
-            padding: 3rem 0;
-            text-align: center;
+        100% {
+          transform: rotate(360deg);
         }
-        
-        .countdown-box {
-            background-color: #4d82af;
-            color: white;
-            border-radius: 10px;
-            padding: 1rem;
-            text-align: center;
-            margin: 0.5rem;
-            min-width: 80px;
+      }
+
+      .baby-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .invitation-text {
+        text-align: justify;
+        max-width: 800px;
+        margin: 0 auto 40px;
+        padding: 0 20px;
+        font-size: 1.1rem;
+      }
+
+      .highlight-cumple {
+        background-color: var(--color-accent);
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-weight: bold;
+      }
+
+      .countdown-section {
+        background: linear-gradient(
+          135deg,
+          var(--color-secondary) 0%,
+          #3a6a8f 100%
+        );
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+      }
+
+      .countdown-box {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        margin: 5px;
+        min-width: 90px;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .countdown-box span {
+        font-size: 2.5rem;
+        font-weight: bold;
+        display: block;
+        font-family: "Baloo 2", cursive;
+      }
+
+      .event-section {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 30px 20px;
+      }
+
+      .event-card {
+        padding: 25px;
+        border-radius: 15px;
+        background-color: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        height: 100%;
+        transition: transform 0.3s ease;
+      }
+
+      .event-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .event-card.cumple {
+        border-top: 5px solid var(--color-primary);
+      }
+
+      .event-card.bautismo {
+        border-top: 5px solid var(--color-secondary);
+      }
+
+      .btn-cumple {
+        background-color: var(--color-primary);
+        color: white;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: none;
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .btn-cumple:hover {
+        background-color: #ff5252;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        color: white;
+      }
+
+      .btn-bautismo {
+        background-color: var(--color-secondary);
+        color: white;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: none;
+        box-shadow: 0 4px 15px rgba(77, 130, 175, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .btn-bautismo:hover {
+        background-color: #3a6a8f;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(77, 130, 175, 0.4);
+        color: white;
+      }
+
+      .carousel-section {
+        background-color: #fff9f2;
+        padding: 4rem 0;
+      }
+
+      .carousel-item img {
+        height: 350px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 50px;
+        height: 50px;
+        background-color: var(--color-primary);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.8;
+      }
+
+      .carousel-control-prev:hover,
+      .carousel-control-next:hover {
+        opacity: 1;
+      }
+
+      footer {
+        background: linear-gradient(
+          135deg,
+          var(--color-secondary) 0%,
+          #2a4d6a 100%
+        );
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+        position: relative;
+      }
+
+      .footer-message {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .music-control {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: var(--color-primary);
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+        z-index: 1000;
+        animation: pulse 2s infinite;
+        font-size: 1.5rem;
+      }
+
+      .divider {
+        width: 1px;
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(255, 255, 255, 0.5) 50%,
+          transparent 100%
+        );
+        margin: 0 30px;
+      }
+
+      .celebration-icon {
+        font-size: 2rem;
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+      }
+
+      .bautismo-icon {
+        font-size: 2rem;
+        color: var(--color-secondary);
+        margin-bottom: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .divider {
+          width: 100%;
+          height: 1px;
+          margin: 30px 0;
+          background: linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            transparent 100%
+          );
         }
-        
-        .countdown-box span {
-            font-size: 2rem;
-            font-weight: bold;
-            display: block;
+
+        .baby-photo {
+          width: 220px;
+          height: 220px;
         }
-        
-        .baby-photo img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #d4b8f0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        .title-cumple {
+          font-size: 2.8rem;
         }
-        
-        .btn-ceremony {
-            background-color: #7b4397;
-            color: white;
-        }
-        
-        .btn-celebration {
-            background-color: #dc2430;
-            color: white;
-        }
-        
-        .gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s;
-            margin-bottom: 1rem;
-        }
-        
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-        
-        footer {
-            background-color: #4d82af;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
-        .music-control {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #7b4397;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-        
-        .modal-header {
-            border-bottom: none;
-        }
-        
-        .modal-content {
-            border-radius: 15px;
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Audio de fondo -->
     <audio id="bgMusic" loop>
-        <source src="./imagenes/dios_esta_aqui.m4a" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
+      <source src="./imagenes/dios_esta_aqui.m4a" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
     </audio>
 
     <!-- Control de música -->
     <div class="music-control" onclick="toggleMusic()">
-        <i class="fas fa-music"></i>
+      <i class="fas fa-music"></i>
     </div>
 
     <!-- Header -->
     <header class="header-section">
-        <div class="container">
-            <h1 class="display-4">Bautismo y Primer Añito de <span class="baby-name">Joaquín</span></h1>
-            <div class="dates mt-4">
-                <p class="fs-5">📿 Ceremonia: Sábado 20/08/2025 - 20:00 hs</p>
-                <p class="fs-5">🎉 Celebración: Domingo 21/08/2025 - 13:00 hs</p>
-            </div>
+      <div class="container">
+        <h1 class="title-cumple mb-3 animate__animated animate__fadeInDown">
+          ¡Primer Cumpleaños!
+        </h1>
+        <h2 class="mb-3">
+          y Bautismo de <span class="baby-name">Joaquín</span>
+        </h2>
+
+        <!-- Foto del bebé con temática de cumpleaños -->
+        <div class="baby-photo animate__animated animate__zoomIn">
+          <img src="./imagenes/1.png" alt="Foto de Joaquín" />
         </div>
+
+        <!-- Mensaje emotivo con énfasis en cumpleaños -->
+        <div class="invitation-text animate__animated animate__fadeIn">
+          <p>Queridos familiares y amigos,</p>
+          <p>
+            ¡Nuestro pequeño Joaquín está por cumplir
+            <span class="highlight-cumple">su primer añito</span> y queremos que
+            formes parte de esta celebración tan especial! Para coronar este año
+            lleno de amor y alegría, también lo estaremos presentando ante Dios
+            en su <span class="highlight-cumple">Bautismo</span>.
+          </p>
+          <p>
+            El <strong>20 de agosto</strong> será un día de bendición cuando
+            Joaquín reciba las aguas bautismales, y al día siguiente, el
+            <strong>21 de agosto</strong>, celebraremos con bombos y platillos
+            su <span class="highlight-cumple">primer cumpleaños</span>.
+          </p>
+          <p>
+            Hemos preparado un fin de semana inolvidable donde tus sonrisas,
+            abrazos y buenos deseos serán el mejor regalo para nuestro pequeño.
+            ¡Esperamos contar con tu presencia para celebrar juntos este doble
+            motivo de felicidad!
+          </p>
+          <p
+            class="text-center mt-4"
+            style="font-family: 'Parisienne', cursive; font-size: 1.5rem"
+          >
+            Con todo nuestro cariño,<br />Renzo y Florencia
+          </p>
+        </div>
+      </div>
     </header>
 
     <!-- Countdown -->
-    <section class="py-5 bg-light">
-        <div class="container text-center">
-            <h2 class="mb-4">La cuenta regresiva ha comenzado...</h2>
-            <div class="d-flex justify-content-center flex-wrap">
-                <div class="countdown-box">
-                    <span id="days">00</span>
-                    <p>Días</p>
-                </div>
-                <div class="countdown-box">
-                    <span id="hours">00</span>
-                    <p>Horas</p>
-                </div>
-                <div class="countdown-box">
-                    <span id="minutes">00</span>
-                    <p>Minutos</p>
-                </div>
-                <div class="countdown-box">
-                    <span id="seconds">00</span>
-                    <p>Segundos</p>
-                </div>
-            </div>
+    <section class="countdown-section">
+      <div class="container">
+        <h2 class="mb-4 text-white animate__animated animate__fadeIn">
+          Faltan para la gran celebración
+        </h2>
+        <div
+          class="d-flex justify-content-center flex-wrap animate__animated animate__fadeInUp"
+        >
+          <div class="countdown-box">
+            <span id="days">00</span>
+            <p>Días</p>
+          </div>
+          <div class="countdown-box">
+            <span id="hours">00</span>
+            <p>Horas</p>
+          </div>
+          <div class="countdown-box">
+            <span id="minutes">00</span>
+            <p>Minutos</p>
+          </div>
+          <div class="countdown-box">
+            <span id="seconds">00</span>
+            <p>Segundos</p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Invitación -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="invitation-text">
-                        <p class="fs-5">
-                            "Un pequeño ángel llegó a nuestras vidas para llenarnos de amor, y
-                            ahora queremos que nos acompañes a celebrar dos momentos
-                            inolvidables."
-                        </p>
-                        <p class="fs-5">
-                            Joaquín recibirá las aguas benditas de su Bautismo 💧 y
-                            también apagará su primera velita 🎂.
-                        </p>
-                        <p class="fs-5">
-                            Será un fin de semana lleno de bendiciones, sonrisas y abrazos...
-                            ¡y tu presencia lo hará aún más especial!
-                        </p>
-                        <p class="fs-5">
-                            🌟 <strong>Te esperamos con mucho cariño</strong> 🌟
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="baby-photo mt-4 mt-lg-0">
-                        <img src="./imagenes/1.png" alt="Foto del bebé" class="img-fluid">
-                    </div>
-                </div>
+    <!-- Información de Eventos -->
+    <section class="event-section">
+      <div class="container">
+        <div class="row align-items-stretch">
+          <!-- Ceremonia de Bautismo -->
+          <div class="col-md-5">
+            <div
+              class="event-card bautismo animate__animated animate__fadeInRight"
+            >
+              <div class="bautismo-icon">
+                <i class="fas fa-church"></i>
+              </div>
+              <h3>Ceremonia de Bautismo</h3>
+              <p><strong>Lugar:</strong> Parroquia "San Juan Evangelista"</p>
+              <p><strong>Fecha:</strong> Sábado 20 de Agosto 2025</p>
+              <p><strong>Hora:</strong> 20:00 hs</p>
+              <p class="mt-3">
+                Un momento sagrado donde Joaquín será recibido en la comunidad
+                cristiana.
+              </p>
+              <button
+                onclick="showCeremonyModal()"
+                class="btn btn-bautismo mt-3 w-100"
+              >
+                <i class="fas fa-info-circle me-2"></i> Ver detalles
+              </button>
             </div>
+          </div>
+          <!-- Divider -->
+          <div
+            class="d-none d-md-flex align-items-center justify-content-center col-md-1"
+          >
+            <div class="divider"></div>
+          </div>
+          <div class="d-md-none col-12">
+            <div class="divider"></div>
+          </div>
+          <!-- Celebración de Cumpleaños (primero y con más énfasis) -->
+          <div class="col-md-6 mb-4 mb-md-0">
+            <div
+              class="event-card cumple animate__animated animate__fadeInLeft"
+            >
+              <div class="celebration-icon">
+                <i class="fas fa-birthday-cake"></i>
+              </div>
+              <h3>¡Fiesta de Primer Cumpleaños!</h3>
+              <p><strong>Lugar:</strong> Coto De Pesca Peyú Quapé</p>
+              <p><strong>Fecha:</strong> Domingo 21 de Agosto 2025</p>
+              <p><strong>Hora:</strong> 13:00 hs</p>
+              <p><strong>Tema:</strong> La Granja de Zenón</p>
+              <p class="mt-3">
+                ¡Vení a celebrar este día tan especial con juegos, sorpresas y
+                mucha diversión!
+              </p>
+              <button
+                onclick="showCelebrationModal()"
+                class="btn btn-cumple mt-3 w-100"
+              >
+                <i class="fas fa-info-circle me-2"></i> Ver todos los detalles
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Botones -->
-    <section class="py-5 bg-light">
-        <div class="container text-center">
-            <div class="d-flex justify-content-center flex-wrap gap-3">
-                <button onclick="showCeremonyModal()" class="btn btn-ceremony btn-lg px-4 py-2">
-                    <i class="fas fa-church me-2"></i> Información Ceremonia
-                </button>
-                <button onclick="showCelebrationModal()" class="btn btn-celebration btn-lg px-4 py-2">
-                    <i class="fas fa-birthday-cake me-2"></i> Información Celebración
-                </button>
-            </div>
-        </div>
-    </section>
+    <!-- Carrusel de Momentos Felices -->
+    <section class="carousel-section">
+      <div class="container">
+        <h2 class="mb-5 text-center animate__animated animate__fadeIn">
+          Un año de momentos increíbles
+        </h2>
 
-    <!-- Galería -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Momentos que nos roban el corazón ❤️</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="./imagenes/MamaFlor.com-dona-pancha-la-Granja-de-Zenon-descarga-gratis.png" alt="Momento especial 1" class="img-fluid">
-                </div>
-                <div class="col-md-4">
-                    <img src="./imagenes/MamaFlor.com-Imagenes-la-Granja-de-Zenon-pollito-descarga-gratis.png" alt="Momento especial 2" class="img-fluid">
-                </div>
-                <div class="col-md-4">
-                    <img src="./imagenes/MamaFlor.com-Granja-Zenon-vaca-lola-descarga-gratis.png" alt="Momento especial 3" class="img-fluid">
-                </div>
+        <div
+          id="momentsCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="./imagenes/MamaFlor.com-dona-pancha-la-Granja-de-Zenon-descarga-gratis.png"
+                class="d-block w-100"
+                alt="Dona Pancha"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>¡Tema de la fiesta!</h5>
+                <p>La Granja de Zenón</p>
+              </div>
             </div>
+            <div class="carousel-item">
+              <img
+                src="./imagenes/MamaFlor.com-Imagenes-la-Granja-de-Zenon-pollito-descarga-gratis.png"
+                class="d-block w-100"
+                alt="Pollito"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Primera Navidad</h5>
+                <p>Nuestro pequeño angelito</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./imagenes/MamaFlor.com-Granja-Zenon-vaca-lola-descarga-gratis.png"
+                class="d-block w-100"
+                alt="Vaca Lola"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Primeros pasos</h5>
+                <p>¡Explorando el mundo!</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./imagenes/1.png" class="d-block w-100" alt="Joaquín" />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Nuestro pequeño</h5>
+                <p>Creciendo día a día</p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#momentsCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#momentsCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
         </div>
+
+        <div class="text-center mt-4">
+          <p class="fs-5">
+            ¡Reviví los mejores momentos de este primer año lleno de amor!
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-4">
-        <div class="container">
-            <p class="mb-1">Con todo nuestro amor, Renzo y Florencia 💕</p>
-            <p class="mb-0">"Un recuerdo hermoso comienza con la compañía de personas especiales"</p>
+    <footer>
+      <div class="container">
+        <p class="footer-message">
+          Gracias por ser parte de este primer año tan especial en la vida de
+          Joaquín
+        </p>
+        <div class="d-flex justify-content-center gap-4 mb-3">
+          <a href="#" class="text-white" onclick="showCeremonyModal()"
+            ><i class="fas fa-church me-2"></i>Bautismo</a
+          >
+          <a href="#" class="text-white" onclick="showCelebrationModal()"
+            ><i class="fas fa-birthday-cake me-2"></i>Cumpleaños</a
+          >
         </div>
+        <p
+          class="mb-0"
+          style="font-family: 'Parisienne', cursive; font-size: 1.8rem"
+        >
+          Renzo y Florencia
+        </p>
+      </div>
     </footer>
+
+    <!-- Modal Celebración (ahora primero) -->
+    <div
+      class="modal fade"
+      id="celebrationModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">
+              <i class="fas fa-birthday-cake me-2"></i> ¡Fiesta de 1er
+              Cumpleaños!
+            </h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <p><strong>Lugar:</strong> Coto De Pesca Peyú Quapé</p>
+                <p>
+                  <strong>Dirección:</strong> [Dirección completa del lugar]
+                </p>
+                <p><strong>Fecha:</strong> Domingo 21 de Agosto 2025</p>
+                <p><strong>Hora:</strong> 13:00 hs</p>
+                <p><strong>Tema:</strong> La Granja de Zenón</p>
+                <p><strong>Dress Code:</strong> Vestimenta casual y cómoda</p>
+
+                <div class="mt-4">
+                  <h5><i class="fas fa-gifts me-2"></i>Regalos:</h5>
+                  <p>
+                    Tu presencia es nuestro mejor regalo, pero si deseas
+                    obsequiar algo, te sugerimos:
+                  </p>
+                  <ul>
+                    <li>Ropa talla 12-18 meses</li>
+                    <li>Libros infantiles</li>
+                    <li>Contribución para su cuenta de ahorros</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="map-container ratio ratio-16x9 mb-3">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.7341560897444!2d-64.84174198977266!3d-23.941483178450948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941ae93421d195bf%3A0xe8360cb4d7374676!2sCoto%20De%20Pesca%20Pey%C3%BA%20Quap%C3%A9!5e1!3m2!1ses!2sar!4v1755267191505!5m2!1ses!2sar"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+                <div class="text-center">
+                  <img
+                    src="./imagenes/MamaFlor.com-dona-pancha-la-Granja-de-Zenon-descarga-gratis.png"
+                    alt="Tema de fiesta"
+                    class="img-fluid rounded"
+                    style="max-height: 150px"
+                  />
+                  <p class="mt-2">
+                    <small>Tema de la fiesta: La Granja de Zenón</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button
+              onclick="confirmAttendance('Celebración del Primer Cumpleaños')"
+              class="btn btn-cumple w-100 py-3 mt-4"
+            >
+              <i class="fas fa-check-circle me-2"></i> Confirmar Asistencia a la
+              Fiesta
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Modal Ceremonia -->
     <div class="modal fade" id="ceremonyModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title"><i class="fas fa-church me-2"></i>Ceremonia de Bautismo</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="fs-5"><strong>Parroquia "San Juan Evangelista"</strong></p>
-                    <p class="fs-5">📅 Sábado 20 de Agosto 2025</p>
-                    <p class="fs-5">⏰ 20:00 hs</p>
-                    
-                    <div class="map-container mt-3 mb-4 ratio ratio-16x9">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197.04164849849911!2d-64.80373979079084!3d-23.944257300526235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941aec06c27e5ee5%3A0xa4207acd85ae6567!2sParroquia%20%22San%20Juan%20Evangelista%22!5e1!3m2!1ses!2sar!4v1755266702026!5m2!1ses!2sar" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    
-                    <button onclick="confirmAttendance('Ceremonia')" class="btn btn-ceremony w-100 py-2">
-                        <i class="fas fa-check-circle me-2"></i> Confirmar Asistencia
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">
+              <i class="fas fa-church me-2"></i> Ceremonia de Bautismo
+            </h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p><strong>Lugar:</strong> Parroquia "San Juan Evangelista"</p>
+            <p>
+              <strong>Dirección:</strong> [Dirección completa de la parroquia]
+            </p>
+            <p><strong>Fecha:</strong> Sábado 20 de Agosto 2025</p>
+            <p><strong>Hora:</strong> 20:00 hs</p>
+            <p><strong>Vestimenta:</strong> Formal/Elegante</p>
 
-    <!-- Modal Celebración -->
-    <div class="modal fade" id="celebrationModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title"><i class="fas fa-birthday-cake me-2"></i>Celebración de Cumpleaños</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="fs-5"><strong>Coto De Pesca Peyú Quapé</strong></p>
-                    <p class="fs-5">📅 Domingo 21 de Agosto 2025</p>
-                    <p class="fs-5">⏰ 13:00 hs</p>
-                    
-                    <div class="map-container mt-3 mb-4 ratio ratio-16x9">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.7341560897444!2d-64.84174198977266!3d-23.941483178450948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941ae93421d195bf%3A0xe8360cb4d7374676!2sCoto%20De%20Pesca%20Pey%C3%BA%20Quap%C3%A9!5e1!3m2!1ses!2sar!4v1755267191505!5m2!1ses!2sar" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    
-                    <button onclick="confirmAttendance('Celebración')" class="btn btn-celebration w-100 py-2">
-                        <i class="fas fa-check-circle me-2"></i> Confirmar Asistencia
-                    </button>
-                </div>
+            <div class="map-container mt-3 mb-4 ratio ratio-16x9">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197.04164849849911!2d-64.80373979079084!3d-23.944257300526235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941aec06c27e5ee5%3A0xa4207acd85ae6567!2sParroquia%20%22San%20Juan%20Evangelista%22!5e1!3m2!1ses!2sar!4v1755266702026!5m2!1ses!2sar"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
+
+            <button
+              onclick="confirmAttendance('Ceremonia de Bautismo')"
+              class="btn btn-bautismo w-100 py-3"
+            >
+              <i class="fas fa-check-circle me-2"></i> Confirmar Asistencia
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Script personalizado -->
     <script>
-        // Música de fondo
-        function toggleMusic() {
-            const music = document.getElementById('bgMusic');
-            const musicControl = document.querySelector('.music-control i');
-            
-            if (music.paused) {
-                music.play();
-                musicControl.classList.remove('fa-music');
-                musicControl.classList.add('fa-pause');
-            } else {
-                music.pause();
-                musicControl.classList.remove('fa-pause');
-                musicControl.classList.add('fa-music');
+      // Música de fondo
+      function toggleMusic() {
+        const music = document.getElementById("bgMusic");
+        const musicControl = document.querySelector(".music-control i");
+
+        if (music.paused) {
+          music.play();
+          musicControl.classList.remove("fa-music");
+          musicControl.classList.add("fa-pause");
+        } else {
+          music.pause();
+          musicControl.classList.remove("fa-pause");
+          musicControl.classList.add("fa-music");
+        }
+      }
+
+      // Mostrar modales
+      function showCeremonyModal() {
+        const modal = new bootstrap.Modal(
+          document.getElementById("ceremonyModal")
+        );
+        modal.show();
+      }
+
+      function showCelebrationModal() {
+        const modal = new bootstrap.Modal(
+          document.getElementById("celebrationModal")
+        );
+        modal.show();
+      }
+
+      // Confirmar asistencia por WhatsApp
+      function confirmAttendance(eventType) {
+        const phoneNumber = "TU_NUMERO_DE_TELEFONO"; // Reemplaza con tu número
+        const message = `Hola, confirmo mi asistencia al ${eventType} de Joaquín.`;
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+          message
+        )}`;
+
+        window.open(whatsappUrl, "_blank");
+      }
+
+      // Countdown to August 21, 2025 at 13:00 (fiesta de cumpleaños)
+      function updateCountdown() {
+        const targetDate = new Date("August 21, 2025 13:00:00").getTime();
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("hours").textContent = hours
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("minutes").textContent = minutes
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("seconds").textContent = seconds
+          .toString()
+          .padStart(2, "0");
+
+        if (distance < 0) {
+          clearInterval(countdownTimer);
+          document.querySelector(".countdown-container").innerHTML =
+            '<div class="alert alert-success">¡El gran día ha llegado! ¡Nos vemos en la fiesta!</div>';
+        }
+      }
+
+      const countdownTimer = setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+      // Iniciar carrusel automático
+      document.addEventListener("DOMContentLoaded", function () {
+        const myCarousel = document.getElementById("momentsCarousel");
+        const carousel = new bootstrap.Carousel(myCarousel, {
+          interval: 3000,
+          ride: "carousel",
+          pause: false,
+        });
+
+        // Animaciones al hacer scroll
+        const animateOnScroll = function () {
+          const elements = document.querySelectorAll(".animate__animated");
+          elements.forEach((element) => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+
+            if (elementPosition < screenPosition) {
+              element.style.visibility = "visible";
+              element.classList.add(element.getAttribute("data-animation"));
             }
-        }
+          });
+        };
 
-        // Mostrar modales
-        function showCeremonyModal() {
-            const modal = new bootstrap.Modal(document.getElementById('ceremonyModal'));
-            modal.show();
-        }
-
-        function showCelebrationModal() {
-            const modal = new bootstrap.Modal(document.getElementById('celebrationModal'));
-            modal.show();
-        }
-
-        // Confirmar asistencia por WhatsApp
-        function confirmAttendance(eventType) {
-            const phoneNumber = "TU_NUMERO_DE_TELEFONO"; // Reemplaza con tu número
-            const message = `Hola, confirmo mi asistencia al ${eventType} del bautismo y primer añito de Joaquín.`;
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            
-            window.open(whatsappUrl, '_blank');
-        }
-
-        // Countdown to August 20, 2025 at 20:00
-        function updateCountdown() {
-            const targetDate = new Date('August 20, 2025 20:00:00').getTime();
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-
-            if (distance < 0) {
-                clearInterval(countdownTimer);
-                document.querySelector('.countdown-container').innerHTML = 
-                    '<div class="alert alert-success">¡El gran día ha llegado!</div>';
-            }
-        }
-
-        const countdownTimer = setInterval(updateCountdown, 1000);
-        updateCountdown();
+        window.addEventListener("scroll", animateOnScroll);
+        animateOnScroll(); // Ejecutar al cargar la página
+      });
     </script>
-</body>
+  </body>
 </html>
-
