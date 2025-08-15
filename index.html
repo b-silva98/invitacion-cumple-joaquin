@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bautismo y Primer Añito de Joaquín</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inria+Serif:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            font-family: 'Inria Serif', serif;
+            background-color: #fffcf7;
+            color: #333;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Parisienne', cursive;
+            color: #4d82af;
+        }
+        
+        .baby-name {
+            color: #4d82af;
+            font-weight: bold;
+        }
+        
+        .header-section {
+            background-color: #fffcf7;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .countdown-box {
+            background-color: #4d82af;
+            color: white;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            margin: 0.5rem;
+            min-width: 80px;
+        }
+        
+        .countdown-box span {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .baby-photo img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #d4b8f0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-ceremony {
+            background-color: #7b4397;
+            color: white;
+        }
+        
+        .btn-celebration {
+            background-color: #dc2430;
+            color: white;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            margin-bottom: 1rem;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background-color: #4d82af;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #7b4397;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        
+        .modal-header {
+            border-bottom: none;
+        }
+        
+        .modal-content {
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Audio de fondo -->
+    <audio id="bgMusic" loop>
+        <source src="./imagenes/dios_esta_aqui.m4a" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Control de música -->
+    <div class="music-control" onclick="toggleMusic()">
+        <i class="fas fa-music"></i>
+    </div>
+
+    <!-- Header -->
+    <header class="header-section">
+        <div class="container">
+            <h1 class="display-4">Bautismo y Primer Añito de <span class="baby-name">Joaquín</span></h1>
+            <div class="dates mt-4">
+                <p class="fs-5">📿 Ceremonia: Sábado 20/08/2025 - 20:00 hs</p>
+                <p class="fs-5">🎉 Celebración: Domingo 21/08/2025 - 13:00 hs</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Countdown -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">La cuenta regresiva ha comenzado...</h2>
+            <div class="d-flex justify-content-center flex-wrap">
+                <div class="countdown-box">
+                    <span id="days">00</span>
+                    <p>Días</p>
+                </div>
+                <div class="countdown-box">
+                    <span id="hours">00</span>
+                    <p>Horas</p>
+                </div>
+                <div class="countdown-box">
+                    <span id="minutes">00</span>
+                    <p>Minutos</p>
+                </div>
+                <div class="countdown-box">
+                    <span id="seconds">00</span>
+                    <p>Segundos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Invitación -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="invitation-text">
+                        <p class="fs-5">
+                            "Un pequeño ángel llegó a nuestras vidas para llenarnos de amor, y
+                            ahora queremos que nos acompañes a celebrar dos momentos
+                            inolvidables."
+                        </p>
+                        <p class="fs-5">
+                            Joaquín recibirá las aguas benditas de su Bautismo 💧 y
+                            también apagará su primera velita 🎂.
+                        </p>
+                        <p class="fs-5">
+                            Será un fin de semana lleno de bendiciones, sonrisas y abrazos...
+                            ¡y tu presencia lo hará aún más especial!
+                        </p>
+                        <p class="fs-5">
+                            🌟 <strong>Te esperamos con mucho cariño</strong> 🌟
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="baby-photo mt-4 mt-lg-0">
+                        <img src="./imagenes/1.png" alt="Foto del bebé" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botones -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <div class="d-flex justify-content-center flex-wrap gap-3">
+                <button onclick="showCeremonyModal()" class="btn btn-ceremony btn-lg px-4 py-2">
+                    <i class="fas fa-church me-2"></i> Información Ceremonia
+                </button>
+                <button onclick="showCelebrationModal()" class="btn btn-celebration btn-lg px-4 py-2">
+                    <i class="fas fa-birthday-cake me-2"></i> Información Celebración
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Momentos que nos roban el corazón ❤️</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="./imagenes/MamaFlor.com-dona-pancha-la-Granja-de-Zenon-descarga-gratis.png" alt="Momento especial 1" class="img-fluid">
+                </div>
+                <div class="col-md-4">
+                    <img src="./imagenes/MamaFlor.com-Imagenes-la-Granja-de-Zenon-pollito-descarga-gratis.png" alt="Momento especial 2" class="img-fluid">
+                </div>
+                <div class="col-md-4">
+                    <img src="./imagenes/MamaFlor.com-Granja-Zenon-vaca-lola-descarga-gratis.png" alt="Momento especial 3" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <p class="mb-1">Con todo nuestro amor, Renzo y Florencia 💕</p>
+            <p class="mb-0">"Un recuerdo hermoso comienza con la compañía de personas especiales"</p>
+        </div>
+    </footer>
+
+    <!-- Modal Ceremonia -->
+    <div class="modal fade" id="ceremonyModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title"><i class="fas fa-church me-2"></i>Ceremonia de Bautismo</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="fs-5"><strong>Parroquia "San Juan Evangelista"</strong></p>
+                    <p class="fs-5">📅 Sábado 20 de Agosto 2025</p>
+                    <p class="fs-5">⏰ 20:00 hs</p>
+                    
+                    <div class="map-container mt-3 mb-4 ratio ratio-16x9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197.04164849849911!2d-64.80373979079084!3d-23.944257300526235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941aec06c27e5ee5%3A0xa4207acd85ae6567!2sParroquia%20%22San%20Juan%20Evangelista%22!5e1!3m2!1ses!2sar!4v1755266702026!5m2!1ses!2sar" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    
+                    <button onclick="confirmAttendance('Ceremonia')" class="btn btn-ceremony w-100 py-2">
+                        <i class="fas fa-check-circle me-2"></i> Confirmar Asistencia
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Celebración -->
+    <div class="modal fade" id="celebrationModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title"><i class="fas fa-birthday-cake me-2"></i>Celebración de Cumpleaños</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="fs-5"><strong>Coto De Pesca Peyú Quapé</strong></p>
+                    <p class="fs-5">📅 Domingo 21 de Agosto 2025</p>
+                    <p class="fs-5">⏰ 13:00 hs</p>
+                    
+                    <div class="map-container mt-3 mb-4 ratio ratio-16x9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.7341560897444!2d-64.84174198977266!3d-23.941483178450948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941ae93421d195bf%3A0xe8360cb4d7374676!2sCoto%20De%20Pesca%20Pey%C3%BA%20Quap%C3%A9!5e1!3m2!1ses!2sar!4v1755267191505!5m2!1ses!2sar" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    
+                    <button onclick="confirmAttendance('Celebración')" class="btn btn-celebration w-100 py-2">
+                        <i class="fas fa-check-circle me-2"></i> Confirmar Asistencia
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script personalizado -->
+    <script>
+        // Música de fondo
+        function toggleMusic() {
+            const music = document.getElementById('bgMusic');
+            const musicControl = document.querySelector('.music-control i');
+            
+            if (music.paused) {
+                music.play();
+                musicControl.classList.remove('fa-music');
+                musicControl.classList.add('fa-pause');
+            } else {
+                music.pause();
+                musicControl.classList.remove('fa-pause');
+                musicControl.classList.add('fa-music');
+            }
+        }
+
+        // Mostrar modales
+        function showCeremonyModal() {
+            const modal = new bootstrap.Modal(document.getElementById('ceremonyModal'));
+            modal.show();
+        }
+
+        function showCelebrationModal() {
+            const modal = new bootstrap.Modal(document.getElementById('celebrationModal'));
+            modal.show();
+        }
+
+        // Confirmar asistencia por WhatsApp
+        function confirmAttendance(eventType) {
+            const phoneNumber = "TU_NUMERO_DE_TELEFONO"; // Reemplaza con tu número
+            const message = `Hola, confirmo mi asistencia al ${eventType} del bautismo y primer añito de Joaquín.`;
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Countdown to August 20, 2025 at 20:00
+        function updateCountdown() {
+            const targetDate = new Date('August 20, 2025 20:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.querySelector('.countdown-container').innerHTML = 
+                    '<div class="alert alert-success">¡El gran día ha llegado!</div>';
+            }
+        }
+
+        const countdownTimer = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
+
